@@ -18,6 +18,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+/**
+ * Runs tests related to methods in EmployeeServiceImpl
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EmployeeServiceImplTest {
@@ -40,6 +43,9 @@ public class EmployeeServiceImplTest {
         employeeIdUrl = "http://localhost:" + port + "/employee/{id}";
     }
 
+    /**
+     * Tests that create, read, and update methods work properly
+     */
     @Test
     public void testCreateReadUpdate() {
         Employee testEmployee = new Employee();
