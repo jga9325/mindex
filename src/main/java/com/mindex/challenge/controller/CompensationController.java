@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Handles requests that deal with compensation data
+ */
 @RestController
 public class CompensationController {
     private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);

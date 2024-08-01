@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mindex.challenge.service.impl.EmployeeServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-01T13:22:43" hostname="LAPTOP-6BQP426B" time="0.065">
+  <properties/>
+  <testcase name="testCreateReadUpdate" classname="com.mindex.challenge.service.impl.EmployeeServiceImplTest" time="0.065"/>
+  <system-out><![CDATA[2024-08-01T09:22:43.464-04:00  INFO 37108 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.EmployeeServiceImplTest]: EmployeeServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-01T09:22:43.466-04:00  INFO 37108 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.EmployeeServiceImplTest
+2024-08-01T09:22:43.494-04:00 DEBUG 37108 --- [o-auto-1-exec-6] c.m.c.controller.EmployeeController      : Received employee create request for [First Name: John, Last Name: Doe, Department: Engineering, Position: Developer, ID: null]
+2024-08-01T09:22:43.495-04:00 DEBUG 37108 --- [o-auto-1-exec-6] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [First Name: John, Last Name: Doe, Department: Engineering, Position: Developer, ID: null]
+2024-08-01T09:22:43.501-04:00 DEBUG 37108 --- [o-auto-1-exec-7] c.m.c.controller.EmployeeController      : Received employee read request for id [e24d2de3-47c6-491c-aa33-07d525f8dc1c]
+2024-08-01T09:22:43.501-04:00 DEBUG 37108 --- [o-auto-1-exec-7] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [e24d2de3-47c6-491c-aa33-07d525f8dc1c]
+2024-08-01T09:22:43.515-04:00 DEBUG 37108 --- [o-auto-1-exec-8] c.m.c.controller.EmployeeController      : Received employee update request for id [e24d2de3-47c6-491c-aa33-07d525f8dc1c] and employee [First Name: John, Last Name: Doe, Department: Engineering, Position: Development Manager, ID: e24d2de3-47c6-491c-aa33-07d525f8dc1c]
+2024-08-01T09:22:43.515-04:00 DEBUG 37108 --- [o-auto-1-exec-8] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [First Name: John, Last Name: Doe, Department: Engineering, Position: Development Manager, ID: e24d2de3-47c6-491c-aa33-07d525f8dc1c]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -17,6 +17,9 @@ import java.util.Date;
 
 import static org.junit.Assert.*;
 
+/**
+ * Runs tests related to methods in CompensationServiceImpl
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CompensationServiceImplTest {
@@ -46,10 +49,13 @@ public class CompensationServiceImplTest {
         compensationIdUrl = "http://localhost:" + port + "/compensation/{id}";
     }
 
+    /**
+     * Test that create and read methods work properly
+     */
     @Test
     public void testCreateRead() {
         // Create new employee
-        Employee employee = new Employee("Bob", "Smith", "Developer", "Engineering");
+        Employee employee = new Employee("Bob", "Smith", "Engineering", "Developer");
         Employee createdEmployee = restTemplate.postForEntity(employeeUrl, employee, Employee.class).getBody();
 
         // Check that employee doesn't have a compensation
@@ -68,10 +74,13 @@ public class CompensationServiceImplTest {
         assertCompensationEquivalence(createdCompensation, readCompensation);
     }
 
+    /**
+     * Tests that only one compensation can be created for an employee
+     */
     @Test
     public void testDuplicateCompensations() {
         // Create new employee
-        Employee employee = new Employee("Bob", "Smith", "Developer", "Engineering");
+        Employee employee = new Employee("Bob", "Smith", "Engineering", "Developer");
         Employee createdEmployee = restTemplate.postForEntity(employeeUrl, employee, Employee.class).getBody();
 
         // Create compensation for employee
@@ -83,6 +92,9 @@ public class CompensationServiceImplTest {
         assertEquals("Compensation already exists for employee with id: " + compensation.getEmployeeId(), exception.getMessage());
     }
 
+    /**
+     * Tests that an invalid compensationId cannot be used to retrieve a compensation
+     */
     @Test
     public void testReadInvalidCompensationId() {
         // Check that an invalid compensationId cannot be used

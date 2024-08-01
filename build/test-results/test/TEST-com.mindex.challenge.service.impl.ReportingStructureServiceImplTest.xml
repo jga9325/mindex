@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-01T13:22:43" hostname="LAPTOP-6BQP426B" time="0.148">
+  <properties/>
+  <testcase name="testGetReportingStructure" classname="com.mindex.challenge.service.impl.ReportingStructureServiceImplTest" time="0.148"/>
+  <system-out><![CDATA[2024-08-01T09:22:43.545-04:00  INFO 37108 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.service.impl.ReportingStructureServiceImplTest]: ReportingStructureServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-01T09:22:43.547-04:00  INFO 37108 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.service.impl.ReportingStructureServiceImplTest
+2024-08-01T09:22:43.570-04:00 DEBUG 37108 --- [o-auto-1-exec-9] c.m.c.controller.EmployeeController      : Received employee create request for [First Name: Bob, Last Name: Smith, Department: Engineering, Position: Manager, ID: null]
+2024-08-01T09:22:43.570-04:00 DEBUG 37108 --- [o-auto-1-exec-9] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [First Name: Bob, Last Name: Smith, Department: Engineering, Position: Manager, ID: null]
+2024-08-01T09:22:43.586-04:00 DEBUG 37108 --- [-auto-1-exec-10] c.m.c.controller.EmployeeController      : Received employee create request for [First Name: Jack, Last Name: Sparrow, Department: Engineering, Position: Senior Developer, ID: null]
+2024-08-01T09:22:43.586-04:00 DEBUG 37108 --- [-auto-1-exec-10] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [First Name: Jack, Last Name: Sparrow, Department: Engineering, Position: Senior Developer, ID: null]
+2024-08-01T09:22:43.601-04:00 DEBUG 37108 --- [o-auto-1-exec-1] c.m.c.controller.EmployeeController      : Received employee create request for [First Name: Dana, Last Name: White, Department: Engineering, Position: UX Designer, ID: null]
+2024-08-01T09:22:43.601-04:00 DEBUG 37108 --- [o-auto-1-exec-1] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [First Name: Dana, Last Name: White, Department: Engineering, Position: UX Designer, ID: null]
+2024-08-01T09:22:43.616-04:00 DEBUG 37108 --- [o-auto-1-exec-2] c.m.c.controller.EmployeeController      : Received employee create request for [First Name: Sarah, Last Name: Lee, Department: Sales, Position: Salesperson, ID: null]
+2024-08-01T09:22:43.616-04:00 DEBUG 37108 --- [o-auto-1-exec-2] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [First Name: Sarah, Last Name: Lee, Department: Sales, Position: Salesperson, ID: null]
+2024-08-01T09:22:43.626-04:00 DEBUG 37108 --- [o-auto-1-exec-3] c.m.c.controller.EmployeeController      : Received employee update request for id [6d6ddb69-2c15-4ed1-894d-05aca59b29fb] and employee [First Name: Jack, Last Name: Sparrow, Department: Engineering, Position: Senior Developer, ID: 6d6ddb69-2c15-4ed1-894d-05aca59b29fb]
+2024-08-01T09:22:43.626-04:00 DEBUG 37108 --- [o-auto-1-exec-3] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [First Name: Jack, Last Name: Sparrow, Department: Engineering, Position: Senior Developer, ID: 6d6ddb69-2c15-4ed1-894d-05aca59b29fb]
+2024-08-01T09:22:43.640-04:00 DEBUG 37108 --- [o-auto-1-exec-4] c.m.c.controller.EmployeeController      : Received employee update request for id [88ef1363-1296-4477-9ad5-00ebca2970d1] and employee [First Name: Bob, Last Name: Smith, Department: Engineering, Position: Manager, ID: 88ef1363-1296-4477-9ad5-00ebca2970d1]
+2024-08-01T09:22:43.640-04:00 DEBUG 37108 --- [o-auto-1-exec-4] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [First Name: Bob, Last Name: Smith, Department: Engineering, Position: Manager, ID: 88ef1363-1296-4477-9ad5-00ebca2970d1]
+2024-08-01T09:22:43.646-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.ReportingStructureService  : Building reporting structure for employee with id [c77b5529-130d-41f3-b5e9-1c8236cab693]
+2024-08-01T09:22:43.646-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [c77b5529-130d-41f3-b5e9-1c8236cab693]
+2024-08-01T09:22:43.651-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.ReportingStructureService  : Building reporting structure for employee with id [6d6ddb69-2c15-4ed1-894d-05aca59b29fb]
+2024-08-01T09:22:43.651-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [6d6ddb69-2c15-4ed1-894d-05aca59b29fb]
+2024-08-01T09:22:43.661-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [c77b5529-130d-41f3-b5e9-1c8236cab693]
+2024-08-01T09:22:43.666-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [10892fd9-3321-431b-842d-2f33b4937722]
+2024-08-01T09:22:43.670-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.ReportingStructureService  : Building reporting structure for employee with id [88ef1363-1296-4477-9ad5-00ebca2970d1]
+2024-08-01T09:22:43.670-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [88ef1363-1296-4477-9ad5-00ebca2970d1]
+2024-08-01T09:22:43.680-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [6d6ddb69-2c15-4ed1-894d-05aca59b29fb]
+2024-08-01T09:22:43.689-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [c77b5529-130d-41f3-b5e9-1c8236cab693]
+2024-08-01T09:22:43.693-04:00 DEBUG 37108 --- [    Test worker] c.m.c.service.impl.EmployeeServiceImpl   : Retrieving employee with id [10892fd9-3321-431b-842d-2f33b4937722]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

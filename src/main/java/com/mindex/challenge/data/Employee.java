@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
+/**
+ * Represents an employee, including their compensation and direct reports
+ */
 public class Employee {
     @Id
     private String employeeId;
@@ -21,11 +24,11 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String position, String department) {
+    public Employee(String firstName, String lastName, String department, String position) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.position = position;
         this.department = department;
+        this.position = position;
     }
 
     public String getEmployeeId() {
@@ -80,7 +83,19 @@ public class Employee {
         return compensation;
     }
 
+    @Override
     public String toString() {
-        return firstName + " " + lastName +  " (" + employeeId + ")";
+        StringBuilder s = new StringBuilder();
+        s.append("First Name: ");
+        s.append(firstName);
+        s.append(", Last Name: ");
+        s.append(lastName);
+        s.append(", Department: ");
+        s.append(department);
+        s.append(", Position: ");
+        s.append(position);
+        s.append(", ID: ");
+        s.append(employeeId);
+        return  s.toString();
     }
 }

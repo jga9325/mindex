@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Handles requests that deal with employee data
+ */
 @RestController
 public class EmployeeController {
     private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);

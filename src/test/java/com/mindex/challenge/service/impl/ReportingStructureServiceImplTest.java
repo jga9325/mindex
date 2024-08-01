@@ -1,8 +1,9 @@
-package com.mindex.challenge.controller;
+package com.mindex.challenge.service.impl;
 
 import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.EmployeeService;
+import com.mindex.challenge.service.ReportingStructureService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,21 +17,26 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-import java.util.ArrayList;
-
+/**
+ * Runs tests related to methods in ReportingStructureImpl
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ReportingStructureControllerTest {
+public class ReportingStructureServiceImplTest {
 
     private String employeeUrl;
     private String employeeIdUrl;
-    private String reportingStructureUrl;
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private ReportingStructureService reportingStructureService;
 
     @LocalServerPort
     private int port;
@@ -42,9 +48,11 @@ public class ReportingStructureControllerTest {
     public void setup() {
         employeeUrl = "http://localhost:" + port + "/employee";
         employeeIdUrl = "http://localhost:" + port + "/employee/{id}";
-        reportingStructureUrl = "http://localhost:" + port + "/reportingStructure/{employeeId}";
     }
 
+    /**
+     * Tests that the reporting structures created for employees are accurate, regardless of the number of reports
+     */
     @Test
     public void testGetReportingStructure() {
         // Create new employees
@@ -85,10 +93,10 @@ public class ReportingStructureControllerTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         return restTemplate.exchange(employeeIdUrl,
-                    HttpMethod.PUT,
-                    new HttpEntity<Employee>(employee, headers),
-                    Employee.class,
-                    employee.getEmployeeId()).getBody();
+                HttpMethod.PUT,
+                new HttpEntity<Employee>(employee, headers),
+                Employee.class,
+                employee.getEmployeeId()).getBody();
     }
 
     private static void assertEmployeeEquivalence(Employee expected, Employee actual) {
@@ -99,7 +107,7 @@ public class ReportingStructureControllerTest {
     }
 
     private void assertCorrectReportingStructure(Employee employee, int expectedNumberOfReports) {
-        ReportingStructure structure = restTemplate.getForEntity(reportingStructureUrl, ReportingStructure.class, employee.getEmployeeId()).getBody();
+        ReportingStructure structure = reportingStructureService.build(employee.getEmployeeId());
         assertEmployeeEquivalence(employee, structure.getEmployee());
         assertEquals(expectedNumberOfReports, structure.getNumberOfReports());
     }

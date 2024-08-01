@@ -1,11 +1,12 @@
 package com.mindex.challenge.data;
 
-import com.mongodb.lang.NonNull;
 import org.springframework.data.annotation.Id;
 
-import javax.annotation.processing.Generated;
 import java.util.Date;
 
+/**
+ * Represents the compensation for an employee
+ */
 public class Compensation {
     @Id
     private String compensationId;
