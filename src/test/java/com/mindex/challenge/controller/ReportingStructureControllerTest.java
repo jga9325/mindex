@@ -76,11 +76,7 @@ public class ReportingStructureControllerTest {
     }
 
     private Employee createEmployee(String firstName, String lastName, String department, String position) {
-        Employee employee = new Employee();
-        employee.setFirstName(firstName);
-        employee.setLastName(lastName);
-        employee.setDepartment(department);
-        employee.setPosition(position);
+        Employee employee = new Employee(firstName, lastName, department, position);
         return restTemplate.postForEntity(employeeUrl, employee, Employee.class).getBody();
     }
 

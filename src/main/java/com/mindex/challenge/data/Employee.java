@@ -1,6 +1,8 @@
 package com.mindex.challenge.data;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
@@ -12,8 +14,18 @@ public class Employee {
     private String position;
     private String department;
     private List<Employee> directReports;
+    @ReadOnlyProperty
+    @DocumentReference(lookup = "{ 'employeeId' : ?#{#self._id} }")
+    private Compensation compensation;
 
     public Employee() {
+    }
+
+    public Employee(String firstName, String lastName, String position, String department) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.position = position;
+        this.department = department;
     }
 
     public String getEmployeeId() {
@@ -62,6 +74,10 @@ public class Employee {
 
     public void setDirectReports(List<Employee> directReports) {
         this.directReports = directReports;
+    }
+
+    public Compensation getCompensation() {
+        return compensation;
     }
 
     public String toString() {
